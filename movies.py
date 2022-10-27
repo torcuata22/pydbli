@@ -3,7 +3,10 @@ connection = sqlite3.connect('movies.db')
 
 cursor = connection.cursor()
 
-cursor.execute(''' CREATE TABLE IF NOT EXISTS Movies (title TEXT, director TEXt, Year INT)''')
+cursor.execute(''' INSERT INTO Movies VALUES('Taxi Driver', 'Martin Scorcese', 1976)''')
+cursor.execute(''' SELECT * FROM Movies ''')
+
+print(cursor.fetchone())
 
 connection.commit()
 connection.close()
